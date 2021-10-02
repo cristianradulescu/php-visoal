@@ -1,0 +1,23 @@
+{
+    "name": "cristianradulescu/php-visoal",
+    "description": "[Vi]sual [so]rting [al]gorithms - PHP implementation with visual representation of each step",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cristian Radulescu",
+            "email": "cristian67@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Visoal\\": "src/"
+        },
+        "files": [
+            "src/Output/Functions.php"
+        ]
+    }
+}
