@@ -5,7 +5,7 @@ namespace Visoal\Algorithms;
 
 use Visoal\Output\ExecutionPass;
 
-class BubbleSort implements SortingAlgorithm
+class BubbleSort implements SortingAlgorithm, AlgorithmDebuggable
 {
     protected $input = [];
     protected $result = [];
