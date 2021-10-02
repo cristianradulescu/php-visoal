@@ -3,28 +3,16 @@ declare(strict_types=1);
 
 namespace Visoal\Algorithms;
 
-use Visoal\Output\ExecutionPass;
-
-class BubbleSort implements SortingAlgorithm, AlgorithmDebuggable
+final class BubbleSort extends SortingAlgorithm
 {
-    protected $input = [];
-    protected $result = [];
-    /** @var ExecutionPass[] */
-    protected $executionPasses = [];
-    protected $executionPassesCount = 0;
-
-    public function __construct(array $input)
-    {
-        $this->input = $input;
-    }
-
     public function execute(): self
     {
         $this->result = $this->input;
 
         do {
+            $this->increaseExecutionPassesCount();
+
             $ordered = false;
-            $this->executionPassesCount++;
             for ($i = 0; $i < count($this->result); $i++) {
                 $currentIndex = $i;
                 $nextIndex = $currentIndex + 1;
@@ -43,36 +31,11 @@ class BubbleSort implements SortingAlgorithm, AlgorithmDebuggable
                     $this->result[$nextIndex] = $currentValue;
                     $ordered = true;
                 }
-                $executionPass = new ExecutionPass();
-                $executionPass->line = $this->result;
-                $executionPass->highlightedIndexes = [$currentIndex, $nextIndex];
-                $this->executionPasses[$this->executionPassesCount][] = $executionPass;
+                
+                $this->storeExecutionPass([$currentIndex, $nextIndex]);
             }
         } while ($ordered === true);
 
         return $this;
-    }
-
-    public function getInput(): array
-    {
-        return $this->input;
-    }
-
-    public function getResult(): array
-    {
-        return $this->result;
-    }
-
-    /**
-     * @return array|ExecutionPass[]
-     */
-    public function getExecutionPasses(): array
-    {
-        return $this->executionPasses;
-    }
-
-    public function getExecutionPassesCount(): int
-    {
-        return $this->executionPassesCount;
     }
 }
