@@ -64,7 +64,7 @@ class BubbleSort implements SortingAlgorithm
     }
 
     /**
-     * @return array|ExecutionPasses[]
+     * @return array|ExecutionPass[]
      */
     public function getExecutionPasses(): array
     {
