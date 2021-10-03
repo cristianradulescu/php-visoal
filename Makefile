@@ -3,3 +3,6 @@ example-bubble-sort:
 
 example-selection-sort:
 	php selection-sort.php 6,5,3,12,11,7
+
+example-insertion-sort:
+	php insertion-sort.php 6,5,3,12,11,7
