@@ -9,12 +9,13 @@ class SelectionSort extends SortingAlgorithm
     {
         $this->result = $this->input;
 
-        for ($index = 0; $index < count($this->result); $index++) {
+        $nbOfElements = count($this->result);
+        for ($index = 0; $index < $nbOfElements; $index++) {
             $this->increaseExecutionPassesCount();
 
             $min = $this->result[$index];
             $minPosition = $index;
-            for ($searchIndex = $index + 1; $searchIndex < count($this->result); $searchIndex++) {
+            for ($searchIndex = $index + 1; $searchIndex < $nbOfElements; $searchIndex++) {
                 if ($min > $this->result[$searchIndex]) {
                     $min = $this->result[$searchIndex];
                     $minPosition = $searchIndex;
@@ -25,7 +26,7 @@ class SelectionSort extends SortingAlgorithm
             $currentValue = $this->result[$index];
             $this->result[$index] = $min;
             $this->result[$minPosition] = $currentValue;
-            
+
             $this->storeExecutionPass([$index]);
         }
 
