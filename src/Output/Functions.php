@@ -30,10 +30,10 @@ function printAlgorithmExecutionPasses(SortingAlgorithm $algorithm)
 
         /** @var ExecutionPass $executionPass */
         foreach ($executionPasses as $executionPass) {
-            $highlightIndexes = $executionPass->highlightedIndexes;
+            $highlightedIndexes = $executionPass->highlightedIndexes;
             $lineToPrint = [];
             foreach ($executionPass->line as $index => $value) {
-                $lineToPrint[] = in_array($index, $highlightIndexes, true)
+                $lineToPrint[] = in_array($index, $highlightedIndexes, true)
                     ? sprintf($highlightPattern, $value)
                     : $value;
             }
