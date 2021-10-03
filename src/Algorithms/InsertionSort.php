@@ -2,7 +2,7 @@
 
 namespace Visoal\Algorithms;
 
-class InsertionSort extends SortingAlgorithm
+final class InsertionSort extends SortingAlgorithm
 {
     public function execute(): SortingAlgorithm
     {

@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Visoal\Algorithms;
 
-class SelectionSort extends SortingAlgorithm
+final class SelectionSort extends SortingAlgorithm
 {
     public function execute(): self
     {
