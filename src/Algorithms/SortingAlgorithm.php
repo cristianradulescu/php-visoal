@@ -5,7 +5,7 @@ namespace Visoal\Algorithms;
 
 use Visoal\Output\ExecutionPass;
 
-abstract class SortingAlgorithm 
+abstract class SortingAlgorithm
 {
     protected $input = [];
     protected $result = [];
@@ -48,11 +48,13 @@ abstract class SortingAlgorithm
         $this->executionPassesCount++;
     }
 
-    public function storeExecutionPass(array $highlightedIndexes = []): void
+    public function storeExecutionPass(array $highlightedIndexes = []): ExecutionPass
     {
         $executionPass = new ExecutionPass();
         $executionPass->line = $this->result;
         $executionPass->highlightedIndexes = $highlightedIndexes;
         $this->executionPasses[$this->executionPassesCount][] = $executionPass;
+
+        return $executionPass;
     }
 }

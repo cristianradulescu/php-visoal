@@ -8,3 +8,6 @@ example-selection-sort: run-selection-sort.php
 
 example-insertion-sort: run-insertion-sort.php
 	php $^ $(PAYLOAD)
+
+example-merge-sort: run-merge-sort.php
+	php $^ $(PAYLOAD)
