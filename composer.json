@@ -5,12 +5,11 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Cristian Radulescu",
-            "email": "cristian67@gmail.com"
+            "name": "Cristian Radulescu"
         }
     ],
     "require": {
-        "php": "^7.4"
+        "php": "^8.0"
     },
     "autoload": {
         "psr-4": {

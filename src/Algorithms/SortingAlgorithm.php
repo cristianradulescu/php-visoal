@@ -7,15 +7,14 @@ use Visoal\Output\ExecutionPass;
 
 abstract class SortingAlgorithm
 {
-    protected $input = [];
-    protected $result = [];
-    /** @var ExecutionPass[] */
-    protected $executionPasses = [];
-    protected $executionPassesCount = 0;
+    protected array $result = [];
+    /** @var ExecutionPass[]|array */
+    protected array $executionPasses = [];
+    protected int $executionPassesCount = 0;
 
-    public function __construct(array $input)
+    public function __construct(protected array $input)
     {
-        $this->input = $input;
+
     }
 
     abstract public function execute(): self;
@@ -30,10 +29,7 @@ abstract class SortingAlgorithm
         return $this->result;
     }
 
-    /**
-     * @return array|ExecutionPass[]
-     */
-    public function getExecutionPasses(): array
+    public function getExecutionPasses(): array|ExecutionPass
     {
         return $this->executionPasses;
     }

@@ -5,6 +5,6 @@ namespace Visoal\Output;
 
 class ExecutionPass
 {
-    public $line = [];
-    public $highlightedIndexes = [];
+    public array $line = [];
+    public array $highlightedIndexes = [];
 }
