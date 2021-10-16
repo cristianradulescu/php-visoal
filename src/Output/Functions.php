@@ -32,7 +32,11 @@ function printAlgorithmExecutionPasses(SortingAlgorithm $algorithm)
         foreach ($executionPasses as $executionPass) {
             $highlightedIndexes = $executionPass->highlightedIndexes;
             $lineToPrint = [];
+            $maxValue = max($executionPass->line);
+            $valuePaddingLength = strlen($maxValue);
+            $valuePaddingChar = $valuePaddingLength > 0 ? ' ' : '';
             foreach ($executionPass->line as $index => $value) {
+                $value = str_pad($value, $valuePaddingLength, $valuePaddingChar, STR_PAD_LEFT);
                 $lineToPrint[] = in_array($index, $highlightedIndexes, true)
                     ? sprintf($highlightPattern, $value)
                     : $value;
